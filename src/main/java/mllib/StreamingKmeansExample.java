@@ -12,6 +12,15 @@ import org.apache.spark.util.Utils;
 
 import scala.Tuple2;
 
+/**
+ * 
+ * @ClassName: StreamingKmeansExample
+ * @Description: For each batch of data, we assign all points to their nearest cluster, 
+ * 				 compute new cluster centers, then update each cluster
+ * @author: 蒋佩釗
+ * @date: 2016年7月21日 下午5:55:24
+ *
+ */
 public class StreamingKmeansExample {
 	public static void main(String[] args) {
 		SparkConf conf = new SparkConf().setAppName("Power iteration clustering Example");
