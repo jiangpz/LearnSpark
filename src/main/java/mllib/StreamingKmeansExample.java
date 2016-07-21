@@ -1,7 +1,5 @@
 package mllib;
 
-import java.util.logging.Logger;
-
 import org.apache.spark.SparkConf;
 import org.apache.spark.mllib.clustering.StreamingKMeans;
 import org.apache.spark.mllib.linalg.Vector;
@@ -31,12 +29,14 @@ public class StreamingKmeansExample {
 		
 		model.trainOn(trainingData);
 //		model.predictOnValues(testData.mapToPair(lp -> new Tuple2<Double, Vector>(lp.label(), lp.features()))).print();
+//		JavaPairDStream<String, Integer> stream = trainingData.mapToPair(v -> new Tuple2(v.size(), v.toJson()));
+//		JavaPairDStream<Double, String> nextData = testData.mapToPair(f -> new Tuple2<Double, String>(f.label(), f.toString()));
 		JavaPairDStream<Double, Integer> result = model.predictOnValues(testData.mapToPair(lp -> new Tuple2<Double, Vector>(lp.label(), lp.features())));
-		JavaPairDStream<String, Integer> stream = trainingData.mapToPair(v -> new Tuple2(v.size(), v.toJson()));
-		result.count();
+//		result.count();
 		result.print();
-		stream.count();
-		stream.print();
+//		stream.count();
+//		stream.print();
+//		nextData.print();
 		
 		jssc.start();
 		jssc.awaitTermination();
