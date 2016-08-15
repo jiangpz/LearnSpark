@@ -3,5 +3,5 @@
 
 其中包含：
  - Spark快速大数据分析3-7章部分代码
- - spark MLib中聚类(http://spark.apache.org/docs/1.6.1/mllib-clustering.html)代码
+ - spark MLib中聚类的代码 http://spark.apache.org/docs/1.6.1/mllib-clustering.html
  - spark streaming k-means的Java实现和测试
