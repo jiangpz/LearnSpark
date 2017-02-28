@@ -17,6 +17,12 @@ public class StreamingKmeansTesting {
 		lines1.saveAsTextFile("data/dir/testing/streaming_kmeans_data_test1");
 		lines1 = jsc.textFile("data/dir/streaming_kmeans_data_test2.txt", 1);
 		lines1.saveAsTextFile("data/dir/testing/streaming_kmeans_data_test2");
+		lines1 = jsc.textFile("data/dir/streaming_kmeans_data_test3.txt", 1);
+		lines1.saveAsTextFile("data/dir/testing/streaming_kmeans_data_test3");
+		lines1 = jsc.textFile("data/dir/streaming_kmeans_data_test4.txt", 1);
+		lines1.saveAsTextFile("data/dir/testing/streaming_kmeans_data_test4");
+		lines1 = jsc.textFile("data/dir/streaming_kmeans_data_test5.txt", 1);
+		lines1.saveAsTextFile("data/dir/testing/streaming_kmeans_data_test5");
 		jsc.close();
 		System.out.println("End Testing---------------------");
 	}
